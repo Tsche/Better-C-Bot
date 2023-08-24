@@ -1,4 +1,6 @@
-fuzzywuzzy==0.18.0
-discord.py==2.0.1
-aiohttp==3.8.1
-python-Levenshtein==0.12.2
+fuzzywuzzy #==0.18.0
+discord.py #==2.0.1
+aiohttp #==3.8.1
+python-Levenshtein #==0.12.2
+click~=8.1.6
+colorama~=0.4.6

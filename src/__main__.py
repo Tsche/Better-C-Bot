@@ -1,4 +1,4 @@
-import aiohttp
+'''import aiohttp
 import discord
 from discord.ext import commands
 from src.util.blacklist import blacklist
@@ -41,7 +41,7 @@ async def on_ready():
     print(bot.user.id)
     print('------')
     print(discord.utils.oauth_url(bot.user.id))
-    
+
     blacklist.load("badwords.txt")
 # @bot.event
 # async def on_member_join(member):
@@ -59,4 +59,4 @@ async def on_ready():
 with open("token.txt", 'r') as file:
     TOKEN = file.read().strip()
 
-bot.run(TOKEN)
+bot.run(TOKEN)'''

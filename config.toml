@@ -1,0 +1,51 @@
+# Elevated permissions
+# John, Che, Andy, Gemu
+permitted = [553478921870508061, 176681843356073985, 806272111076835381, 135215807532630016]
+
+
+# General
+[general]
+max_msg_size = 2000
+no_react = "❎"
+yes_react = "✅"
+
+[roles]
+admin = 940645400287785031
+staff = 583646707938623489 # [941048310586822748, 941056980305457182]
+ping = 873897990958481448
+
+# Role that can reactivate and close help channels without having to own the channel
+helpful = 983185446047719504
+
+[channels]
+rules = 583301260006916099  # #rules
+help = 1045182836107395124  # #help
+
+# internal
+logs = 634774944705937428   # #logs
+debug = 1144079763133182054 # #bot-logs
+
+# Bot detection
+[massjoin]
+window = 30
+amount = 5
+notif_timeout = 900
+wizard_timeout = 300
+default_pfp = true
+min_acc_age = true
+min_acc_age_val = 604800
+
+# Bump notifier
+[bumper]
+bot_content = "Bump done"
+bot_id = 302050872383242240
+role_id = 873897990958481448
+
+# Duplicate message detection
+[dupe]
+thresh = 0.8
+
+# Delted message sniping
+[snipe]
+max_del_msgs = 10
+max_edit_msg_age = 86400

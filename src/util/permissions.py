@@ -1,7 +1,7 @@
 import discord
 from typing import Union, Optional
 
-from src import config as conf
+from .. import config as conf
 
 
 def is_staff(member: discord.Member, source: Optional[discord.abc.GuildChannel] = None) -> bool:
@@ -28,7 +28,7 @@ def is_staff(member: discord.Member, source: Optional[discord.abc.GuildChannel] 
 
 
 def get_role(role: Union[discord.Role, int, str], guild: Optional[discord.Guild] = None) -> discord.Role:
-    """ 
+    """
     If role is a discord.Role then nothing is pulled from cache
     If role is an integer then a discord.Role object is pulled from cache
     if role is a string, then a discord.Role object is pulled from the `guild.roles` cache.
@@ -43,7 +43,7 @@ def get_role(role: Union[discord.Role, int, str], guild: Optional[discord.Guild]
     if guild is None and isinstance(role, (str, int, )):
         raise TypeError(
             "Expected a guild since role was str or int, but got None")
-    
+
     if type(role) == int:
         role = discord.utils.get(guild.roles, id=role)
 

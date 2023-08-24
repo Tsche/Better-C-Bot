@@ -4,9 +4,8 @@ import traceback
 from contextlib import redirect_stdout
 
 from discord.ext import commands
-import discord
 
-from src import config as conf
+from .. import config as conf
 
 class Administration(commands.Cog, name="Administration"):
     def __init__(self, bot):

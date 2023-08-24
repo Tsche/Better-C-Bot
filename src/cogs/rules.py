@@ -7,9 +7,9 @@ from dataclasses import dataclass
 from discord.ext import commands
 import discord
 
-from src.util import permissions
-from src.util.blacklist import blacklist
-from src import config as conf
+from ..util import permissions
+from ..util.blacklist import blacklist
+from .. import config as conf
 
 
 @dataclass
@@ -63,7 +63,7 @@ class RulesEnforcer(commands.Cog, name="Rules"):
 
         history = self._deleted[ctx.channel][-1 - index]
         message = history[-1]
-        
+
         msg_content = message.msg.content.lower()
         if msg_content in blacklist:
             return await ctx.message.reply( "The requested deleted message contained a word that we do not allow, sorry! "

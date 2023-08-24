@@ -3,8 +3,8 @@ from discord.ext import commands
 from fuzzywuzzy import fuzz, process
 import discord
 
-from src.util.blacklist import blacklist
-from src import config as conf
+from ..util.blacklist import blacklist
+from .. import config as conf
 
 class AutoMod(commands.Cog):
     """
@@ -22,7 +22,7 @@ class AutoMod(commands.Cog):
 
         if author is None:
             return False, None
-        
+
         # apparently @everyone is in this list
         if len(author.roles) > 1:
             return False, None
@@ -82,22 +82,22 @@ class AutoMod(commands.Cog):
             )
             return True
         return False
-    
+
     @commands.Cog.listener()
     async def on_message_edit(self, _, after):
         try:
             if after.author.id == self.bot.user.id:
                 return
-            
+
             await self.apply_filter(after)
         except Exception as e:
             print(e)
-            
+
     @commands.Cog.listener()
     async def on_message(self, msg):
         if msg.author.id == self.bot.user.id:
             return
-        
+
         if await self.apply_filter(msg):
             return
 

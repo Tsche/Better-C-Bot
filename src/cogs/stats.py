@@ -3,7 +3,7 @@ from discord.ext import commands, tasks
 
 import datetime
 
-from src import config as conf
+from .. import config as conf
 
 class Statistics(commands.Cog):
     """

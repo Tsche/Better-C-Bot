@@ -1,8 +1,7 @@
 from discord.ext import commands
-import discord
 
-from src import config as conf
-from src.util import permissions
+from .. import config as conf
+from ..util import permissions
 
 
 class Ping(commands.Cog):
@@ -18,7 +17,7 @@ class Ping(commands.Cog):
             if not permissions.has_role(msg.author, conf.ping_role):
                 await msg.author.add_roles(permissions.get_role(conf.ping_role, msg.guild)),
                 await msg.reply(f"<@&{conf.ping_role}> please welcome {msg.author.mention}")
-                
+
 
 async def setup(bot):
     await bot.add_cog(Ping(bot))

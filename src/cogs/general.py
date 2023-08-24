@@ -1,8 +1,6 @@
-import io
 import urllib.parse
 
 from discord.ext import commands
-import discord
 
 
 class General(commands.Cog, name="General"):
